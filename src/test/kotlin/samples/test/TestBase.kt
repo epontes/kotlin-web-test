@@ -1,7 +1,10 @@
-package samples
+package samples.test
 
+import org.junit.After
+import org.junit.Before
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver
+import samples.Util.UtilResources
 import java.net.URI
 import java.util.concurrent.TimeUnit
 
@@ -11,9 +14,8 @@ abstract class TestBase {
         private set
 
 
-    @BeforeTest
-
-    fun setup() {
+@Before
+fun setup() {
         System.setProperty(UtilResources.getProperties(
             "nameDriver"),
             UtilResources.getProperties(
@@ -28,8 +30,7 @@ abstract class TestBase {
         driver?.get(URI(UtilResources.getProperties("pageURL")).toString())
     }
 
-    @AfterTest
-
+    @After
     fun driverClose() {
 
         driver?.close();
