@@ -10,11 +10,11 @@ class HomePage(private val driver: WebDriver) {
 
 
 
-    @FindBy(id = "masthead-search-term")
+    @FindBy(id = "search")
     private val searchBox: WebElement? = null
 
 
-    @FindBy(id = "search-btn")
+    @FindBy(id = "search-icon-legacy")
     private val searchButton: WebElement? = null
 
 

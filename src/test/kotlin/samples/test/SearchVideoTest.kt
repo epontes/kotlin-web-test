@@ -15,7 +15,8 @@ class SearchVideoTest(): TestBase() {
         homePage.searchVideo(UtilResources.getProperties("nameVideo"))
 
         val resultPage = ResultPage(driver!!)
-        Assert.assertTrue(resultPage.isPageOpened())
+
+        Assert.assertTrue(resultPage.isPageOpened()!!)
 
         resultPage.selectVideo(UtilResources.getProperties("selectVideo"))
 

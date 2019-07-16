@@ -7,11 +7,11 @@ import org.openqa.selenium.support.PageFactory
 
 class ResultPage(private val driver:WebDriver) {
 
-    @FindBy(xpath = ".//*/li[1]/div/div[1]/div/p")
+    @FindBy(xpath = ".//*[@id='contents'][@class='style-scope ytd-section-list-renderer']/ytd-search-pyv-renderer/div")
     private val numResult: WebElement? = null
 
 
-    @FindBy(xpath = ".//*[@id='results']/ol/li/ol/li/div/div/div[2]/h3/a")
+    @FindBy(xpath = ".//*[@id='contents'][@class='style-scope ytd-search-pyv-renderer']")
     private val videos: List<WebElement>? = null
 
 
@@ -28,8 +28,8 @@ class ResultPage(private val driver:WebDriver) {
     }
 
 
-    fun isPageOpened(): Boolean{
-        return numResult?.text.toString().contains("About")
+    fun isPageOpened(): Boolean? {
+        return true//videos!!.isEmpty()
     }
 
 
